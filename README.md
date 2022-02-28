@@ -10,7 +10,7 @@ O site é constituído de 9 páginas:
 7.	Employee(Uma página com uma função CRUD para os funcionários) 
 8.	Users(Uma página com uma função CRUD para os funcionários) 
 9.	ClientData(Página onde o usuário é redirecionado por meio do login, onde ele vizualiza e altera seus dados)
-# English 
+ ***********English************
 The site, called BlixenTech, was developed using the Flask micro-framework, HTML, CSS and Javascript and using Boostrap to streamline the project. Then also insert pages with certain SQL database manager System, to create, connect a data connection, change and delete products (customers and employees).
 The site consists of 9 pages:
 1. Index: main page
