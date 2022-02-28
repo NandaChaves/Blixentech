@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>BlixenTech</title>
+    <link href="{{url_for('static', filename='style.css' )}}" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<script src="{{url_for('static', filename='js/dropdownLayer.js')}}" type="text/javascript"></script>
+    <!-- Images icons footer -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+  </head>
+  <style>
+  /********Image behind another********/
+  .bg{
+    position: absolute;
+    width: 240px;
+    height: 270px;
+    top: 47%;
+    left: 42%;
+    background: url({{ url_for ('static', filename = 'images/promotion.jpg')}});
+    background-size: cover;
+    background-position: center;
+}
+
+.paper{
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    top: 20%;
+    left: 30%;
+    background: url({{ url_for ('static', filename = 'images/paper.jpg')}});
+    background-size: cover;
+    background-position: center;
+    mix-blend-mode: lighten;
+    filter: brightness(1.5);
+}
+.cont{
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
+
+.cont .slider{
+ position: absolute;
+ top: 30%;
+ left: 26%;
+ width: 50%;
+ height: 70%;
+}
+
+.cont ul{
+ position: absolute;
+ bottom: 30px;
+ top: 120%;
+ left: 50%;
+ transform: translate(-50%);
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ z-index: 20;
+}
+
+.cont ul li{
+  list-style: none;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.cont ul li video{
+  width: 200px;
+  transition: all 0.15s;
+}
+
+.cont ul li video:hover{
+  transform: scale(1.1);
+}
+
+video{
+ width: 100%;
+ height: 100%;
+}
+@media (max-width: 900px)
+ {
+     .bg{
+         width: 36%;
+         height: 50%;
+         background-position: center;
+         top: 47%;
+         left: 35%;
+     }
+
+     .paper{
+         width: 150%;
+         height: 80%;
+         background-position: center;
+         top: 30%;
+         left: -19%;
+     }
+}
+  /********News********/
+.persons{
+     padding: 40px 0 20px;
+     max-width: 1000px;
+     margin: 0 auto;
+     position: relative;
+}
+
+        .persons:before,
+        .persons:after{
+            clear: both;
+            content: "";
+            display: table;
+        }
+
+        .persons .person{
+            width: 25%;
+            margin-bottom: 20px;
+            display: table;
+            float: left;
+            border-left: 20px solid transparent;
+            cursor: pointer;
+        }
+
+        .persons .person .avatar img{
+            border: 8px solid black;
+            display: inline-block;
+            width: 100%;
+            height: 180px;
+            vertical-align: middle;
+        }
+
+        .persons .person .active .avatar img{
+            border-color: white;
+        }
+
+        .persons .person .fullname{
+            width: 100%;
+            display: block;
+            text-align: center;
+            font-family: arial;
+            color: black;
+            font-size: 20px;
+            padding: 10px 0 5px;
+        }
+
+        .persons .person .js-description{
+            display: none;
+        }
+
+        .persons .js-dropdown{
+            background-clip: padding-box
+            !important;
+            border: 0 solid transparent;
+            box-sizing: border-box;
+            float: left;
+            padding: 0;
+            margin: 40px 0 20px;
+            width: 100%;
+            display: table;
+            border-color: transparent;
+            border-image: none;
+            border-style: solid;
+            border-width: 0 0 10px 20px;
+        }
+
+        .persons .js-dropdown:before,
+        .persons .js-dropdown:after{
+            clear: both;
+            content: "";
+            display: table;
+        }
+
+        .persons .js-dropdown .js-dropdown-content {
+            background: none repeat scroll 0 0 crimson;
+            border: 3px solid #e5e5e5;
+            color: #333333;
+            position: relative;
+            width: 100%;
+            padding: 48px 32px 0;
+
+        }
+
+        .persons .js-dropdown .js-dropdown-content
+        .js-dropdown-arrow {
+           position: absolute;
+           bottom: 100%;
+           left: 50%;
+           width: 0;
+           height: 0;
+           margin-left: -55px;
+           border: 30px solid transparent;
+           border-bottom-color: #e5e5e5;
+           pointer-events: none;
+           transition: left 0.3s;
+        }
+
+        .persons .js-dropdown .js-dropdown-content p{
+            line-height: 25px;
+            margin: 0 0 40px;
+            padding: 0;
+            font-size: 15px;
+            color: white;
+        }
+  </style>
+  <body>
+  <!--Responsive menu-->
+  <header>
+    <div class="logo">
+      <a href="#">
+        <img src="{{ url_for('static',filename='images/logo.png') }}" alt="Logo Image">
+      </a>
+    </div>
+
+    <div class="navigation">
+      <input type="checkbox" class="toggle-menu">
+      <div class="hamburger"></div>
+      <ul class="menu">
+        <li><a href="home">Home</a></li>
+        <li><a href="product">Product</a></li>
+        <li><a href="store">Store</a></li>
+        <li><a href="login">Login</a></li>
+      </ul>
+    </div>
+  </header>
+
+<section>
+<div class="bg">
+</div>
+<div class="paper">
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</section>
+
+  <div class="cont">
+        <video src="{{ url_for('static',filename='images/1.mp4') }}" class="slider" autoplay loop muted controls></video>
+        <ul>
+            <li onclick="videoslider('static/images/1.mp4')"><video src="{{ url_for('static',filename='images/1.mp4') }}"></video></li>
+            <li onclick="videoslider('static/images/2.mp4')"><video src="{{ url_for('static',filename='images/2.mp4') }}"></video></li>
+            <li onclick="videoslider('static/images/3.mp4')"><video src="{{ url_for('static',filename='images/3.mp4') }}"></video></li>
+            <li onclick="videoslider('static/images/4.mp4')"><video src="{{ url_for('static',filename='images/4.mp4') }}"></video></li>
+        </ul>
+    </div>
+  <br><br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+   <h1 style="text-align:center;">News</h1>
+  <div class="container">
+    <div class="persons js-dropdown-items">
+	  <div class="person js-dropdown-item">
+	    <div class="avatar">
+	      <img src="{{ url_for('static',filename='images/newGames.png') }}" alt="">
+	   </div>
+	   <div class="fullname">
+	     New Products
+	   </div>
+		   <div class="js-description">
+		   <p>
+			   <ul style="color:white;">
+			  <li>Rainbow: Extraction(PS4,PS5,XBOX)</li>
+			  <li>Pokemnon legends: ARCEUS</li>
+			  <li>ELDEN RING(PS4,PS5,XBOX,PC)</li>
+			  <li>Rainbow: Extraction(PS4,PS5,XBOX)</li>
+			  <li>Age of Empires IV(PC)</li>
+			  <li>Rainbow: Extraction(PS4,PS5,XBOX)</li>
+			  <li>Rainbow: Extraction(PS4,PS5,XBOX)</li>
+		     </ul>
+		   </p>
+		</div>
+	 </div>
+
+	  <div class="person js-dropdown-item">
+	    <div class="avatar">
+	      <img src="{{ url_for('static',filename='images/img.png') }}" alt="">
+	   </div>
+	   <div class="fullname">
+	    The Game Awards 2021 - December 9th, 2021
+	   </div>
+		   <div class="js-description">
+		   <p>
+		 Geoff Keighley's confirmed that The Game Awards are coming back on December 9th,
+		hosting an in-person event at the Microsoft Theater in Los Angeles. Nominees will
+		be revealed on Tuesday 16th November and there'll be new game announcements "in the double digits."
+		That'll be streamed worldwide at 5pm PST / 8am EST, expected to run for 3 hours. As for the UK
+		and Europe, that goes into the early hours of December 10th, going live at 1am GMT / 2am CET.
+		   </p>
+		</div>
+	 </div>
+
+      <div class="person js-dropdown-item">
+	    <div class="avatar">
+		<img src="{{ url_for('static',filename='images/pc.png') }}" alt="">
+	   </div>
+	   <div class="fullname">
+	     HP's new cases have a separate 'Cryo Chamber' for cooling
+	   </div>
+		   <div class="js-description">
+		   <p>
+		   PC cases are having an interesting showing at this years’ CES with
+			offerings like this one with automatically opening and closing vents.
+			HP recently debuted its new Omen 27u monitor, and also showed off a new
+			PC gaming case with a different, less cool looking but also likely much
+			cheaper, innovative way of keeping cool.
+			The new Omen 45L ATX case features a patented Omen Cryo Chamber that sits
+			on top of the main case. It can support up AiO liquid coolers up to 360mm
+			in size, and works by pulling cooler air from outside the tower into
+			this chamber. It makes sense that this would be cooler than using air from
+			already inside the case, and there’s a similar intake on the front too.
+		   </p>
+		</div>
+	 </div>
+
+      <div class="person js-dropdown-item">
+	    <div class="avatar">
+			<img src="{{ url_for('static',filename='images/game.png') }}" alt="">
+	   </div>
+	   <div class="fullname">
+	     O mercado de jogos após a pandemia
+	   </div>
+		   <div class="js-description">
+		   <p>
+		   Desde o início da pandemia, a procura pelo lazer e sociabilização proporcionados
+			pelos videogames por quem está em casa alavancou ainda mais essa indústria criativa.
+			Segundo o Global Games Market Report, da Newzoo, o mercado de jogos deve movimentar
+			cerca de $189.3 bilhões de dólares em 2021.Hoje, são frequentes os editais, festivais e concursos de
+			   jogos pelo país. A PUCPR está inserida nesse circuito, pois promove anualmente a Global Game Jam,
+			   que é um dos maiores e mais produtivos hackatons dessa iniciativa no mundo.
+		   </p>
+		</div>
+	 </div>
+	</div>
+  </div>
+
+   <script>
+    $(document).ready(function(){
+	  $('.js-dropdown-item').dropdownLayer({
+	    'elemSelector':"js-dropdown-item",
+		'containerClass':"js-dropdown-items",
+		'descriptionClass':"js-description",
+		'arrowClass':"js-dropdown-arrow",
+		'dropdownClass':"js-dropdown",
+		'dropdownContentClass':"js-dropdown-content",
+		'disableDropdownClass':"js-dropdown-disable",
+		'useSlideUp':true,
+		'slideUpSpeed':200,
+		'useSlideDown':true,
+		'slideDownSpeed':200,
+	  });
+	});
+
+   </script>
+      <br>
+      <br>
+      <br>
+      <br>
+  </body>
+    <!--Footer-->
+  <footer class="footer">
+  	 <div class="container">
+  	 	<div class="row">
+  	 		<div class="footer-col">
+  	 			<h4>company</h4>
+  	 			<ul>
+  	 				<li><a href="#">about us</a></li>
+  	 				<li><a href="#">our services</a></li>
+  	 				<li><a href="#">privacy policy</a></li>
+  	 				<li><a href="#">affiliate program</a></li>
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+  	 			<h4>get help</h4>
+  	 			<ul>
+  	 				<li><a href="#">FAQ</a></li>
+  	 				<li><a href="#">shipping</a></li>
+  	 				<li><a href="#">returns</a></li>
+  	 				<li><a href="#">order status</a></li>
+  	 				<li><a href="#">payment options</a></li>
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+  	 			<h4>online shop</h4>
+  	 			<ul>
+  	 				<li><a href="#">watch</a></li>
+  	 				<li><a href="#">IPhone</a></li>
+  	 				<li><a href="#">headphone</a></li>
+  	 				<li><a href="#">game</a></li>
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+  	 			<h4>follow us</h4>
+  	 			<div class="social-links">
+  	 				<a href="#"><i class="fab fa-facebook-f"></i></a>
+  	 				<a href="#"><i class="fab fa-twitter"></i></a>
+  	 				<a href="#"><i class="fab fa-instagram"></i></a>
+  	 				<a href="#"><i class="fab fa-linkedin-in"></i></a>
+  	 			</div>
+  	 		</div>
+  	 	</div>
+  	 </div>
+  </footer>
+<!------------Filter Price----------->
+ <script>
+ function videoslider(links){
+            document.querySelector(".slider").src = links;
+        }
+
+ </script>
+</html>

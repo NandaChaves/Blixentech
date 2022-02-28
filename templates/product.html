@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Place image inside Silhouette</title>
+    <link href="{{url_for('static', filename='style.css' )}}" rel="stylesheet">
+	  <script src="{{url_for('static', filename='js/script.js')}}"></script>
+        <!-- Images icons footer -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+      <!--Font awesome cdn link-->
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">-->
+
+   <!--Filter Price Range-->
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  </head>
+
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500&display=swap');
+h1{
+  text-align: center;
+}
+h2{
+  text-align: center;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: 'Fredoka', sans-serif;
+}
+li{
+  text-align: left;
+  font-style: cursive;
+  margin: 5px;
+}
+#loading
+{
+    text-align:center;
+    background: url('static/images/loading.gif') no-repeat center;
+    height: 150px;
+}
+  </style>
+  <body>
+  <!------------Responsive menu-------------->
+  <header>
+    <div class="logo">
+      <a href="#">
+        <img src="{{ url_for('static',filename='images/logo.png') }}" alt="Logo Image">
+      </a>
+    </div>
+
+    <div class="navigation">
+      <input type="checkbox" class="toggle-menu">
+     <div class="hamburger"></div>
+
+      <ul class="menu">
+        <li><a href="home">Home</a></li>
+        <li><a href="product">Product</a></li>
+        <li><a href="store">Store</a></li>
+        <li><a href="login">Login</a></li>
+      </ul>
+    </div>
+  </header>
+  <br><br><br><br>
+<div class="container">
+    <div class="row">
+    <br />
+        <div class="col-md-3">
+            <div class="list-group">
+                <h3>Price</h3>
+                <input type="hidden" id="hidden_minimum_price" value="0" />
+                <input type="hidden" id="hidden_maximum_price" value="65000" />
+                <p id="price_show">10 - 1000</p>
+                <div id="price_range"></div>
+            </div>
+        </div>
+        <div class="col-md-9">
+           <div class="row filter_data">
+        </div>
+    </div>
+    </div>
+</div>
+<br><br><br><br><br>
+<br> <h1>⏰ Limited opportunity</h1>
+  <div id="timer"></div>
+  <h2>Share this quiz with your friends, and enjoy various discounts on the products below.
+     <br>The greater the number of responses by the end of the period above, the greater the discount</h2>
+  <span>
+      <a href="https://tinyurl.com/arkbanhn">Link Quizz</a>
+  </span>
+  <div class="promo">
+      <ul>
+        <li>10% discount:100 answers</li>
+        <li>15% discount:150 answers</li>
+        <li>25% discount:250 answers</li>
+        <li>30% discount:300 answers</li>
+        <li>35% discount:350 answers</li>
+        <li>50% discount:500 answers</li>
+    </ul>
+  </div>
+
+  <div id="qrcode">
+      <img src="{{ url_for('static',filename='images/qrcode.png') }}" alt="qrcode">
+  </div>
+<div class="box-container">
+    <div class="box">
+     <div class="image">
+       <img src="{{ url_for('static',filename='images/aliceMad.jpg') }}" alt="alice Madness">
+     </div>
+     <div class="info">
+         <h3 class="title">Alice Madness</h3>
+         <div class="subInfo">
+           <div class="price"> €29.9/- <span>€39.9/-</span> </div>
+             <div class="stars">
+                    <!--Image of star-->
+                 <i class="fas fa-star"></i>
+                 <i class="fas fa-star"></i>
+                 <i class="fas fa-star"></i>
+                 <i class="fas fa-star"></i>
+                 <i class="fas fa-star-half"></i>
+             </div>
+         </div>
+        </div>
+        <div class="overlay">
+            <a href="#" style="--i:1;" class="fas fa-shopping-cart"></a>
+            <a href="#" style="--i:2;" class="fas fa-heart"></a>
+            <a href="#" style="--i:3;" class="fas fa-search"></a>
+        </div>
+       </div>
+     <!------------Image 2-------------->
+     <div class="box">
+     <div class="image">
+       <img src="{{ url_for('static',filename='images/disneyGames.jpg') }}" alt="alice Madness">
+     </div>
+     <div class="info">
+         <h3 class="title">Disney Playstation</h3>
+         <div class="subInfo">
+           <div class="price"> €18.9/- <span>€23.9/-</span> </div>
+             <div class="stars">
+                    <!--Image of star-->
+                 <i class="fas fa-star"></i>
+                 <i class="fas fa-star"></i>
+                 <i class="fas fa-star"></i>
+                 <i class="fas fa-star"></i>
+                 <i class="fas fa-star-half"></i>
+             </div>
+         </div>
+        </div>
+        <div class="overlay">
+            <a href="#" style="--i:1;" class="fas fa-shopping-cart"></a>
+            <a href="#" style="--i:2;" class="fas fa-heart"></a>
+            <a href="#" style="--i:3;" class="fas fa-search"></a>
+        </div>
+       </div><!---box-->
+
+     <!------------Image 3-------------->
+     <div class="box">
+     <div class="image">
+       <img src="{{ url_for('static',filename='images/theWitcher.jpg') }}" alt="alice Madness">
+     </div>
+     <div class="info">
+         <h3 class="title">The Witcher</h3>
+         <div class="subInfo">
+           <div class="price"> €56.9/- <span>€87.99/-</span> </div>
+             <div class="stars">
+                    <!--Image of star-->
+                 <i class="fas fa-star"></i>
+                 <i class="fas fa-star"></i>
+                 <i class="fas fa-star"></i>
+                 <i class="fas fa-star"></i>
+                 <i class="fas fa-star-half"></i>
+             </div>
+         </div>
+        </div>
+        <div class="overlay">
+            <a href="#" style="--i:1;" class="fas fa-shopping-cart"></a>
+            <a href="#" style="--i:2;" class="fas fa-heart"></a>
+            <a href="#" style="--i:3;" class="fas fa-search"></a>
+        </div>
+       </div><!---box-->
+ <!------------Image 4-------------->
+     <div class="box">
+     <div class="image">
+       <img src="{{ url_for('static',filename='images/xBox.png') }}" alt="xBox">
+     </div>
+     <div class="info">
+         <h3 class="title">Console Xbox</h3>
+         <div class="subInfo">
+           <div class="price"> €56.90/- <span>€79.9/-</span> </div>
+             <div class="stars">
+                    <!--Image of star-->
+                 <i class="fas fa-star"></i>
+                 <i class="fas fa-star"></i>
+                 <i class="fas fa-star"></i>
+                 <i class="fas fa-star"></i>
+                 <i class="fas fa-star-half"></i>
+             </div>
+         </div>
+        </div>
+        <div class="overlay">
+            <a href="#" style="--i:1;" class="fas fa-shopping-cart"></a>
+            <a href="#" style="--i:2;" class="fas fa-heart"></a>
+            <a href="#" style="--i:3;" class="fas fa-search"></a>
+        </div>
+       </div><!---box-->
+    <!------------Image 5-------------->
+     <div class="box">
+     <div class="image">
+       <img src="{{ url_for('static',filename='images/tomb_raider.jpg') }}" alt="alice Madness">
+     </div>
+     <div class="info">
+         <h3 class="title">Lara Croft</h3>
+         <div class="subInfo">
+           <div class="price"> €49.50/- <span>€59.99/-</span> </div>
+             <div class="stars">
+                    <!--Image of star-->
+                 <i class="fas fa-star"></i>
+                 <i class="fas fa-star"></i>
+                 <i class="fas fa-star"></i>
+                 <i class="fas fa-star"></i>
+                 <i class="fas fa-star-half"></i>
+             </div>
+         </div>
+        </div>
+        <div class="overlay">
+            <a href="#" style="--i:1;" class="fas fa-shopping-cart"></a>
+            <a href="#" style="--i:2;" class="fas fa-heart"></a>
+            <a href="#" style="--i:3;" class="fas fa-search"></a>
+        </div>
+       </div><!---box-->
+      </div><!---box-container-->
+  <!----------------------------------Footer----------------------------->
+  <footer class="footer">
+  	 <div class="container">
+  	 	<div class="row">
+  	 		<div class="footer-col">
+  	 			<h4>company</h4>
+  	 			<ul>
+  	 				<li><a href="#">about us</a></li>
+  	 				<li><a href="#">our services</a></li>
+  	 				<li><a href="#">privacy policy</a></li>
+  	 				<li><a href="#">affiliate program</a></li>
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+  	 			<h4>get help</h4>
+  	 			<ul>
+  	 				<li><a href="#">FAQ</a></li>
+  	 				<li><a href="#">shipping</a></li>
+  	 				<li><a href="#">returns</a></li>
+  	 				<li><a href="#">order status</a></li>
+  	 				<li><a href="#">payment options</a></li>
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+  	 			<h4>online shop</h4>
+  	 			<ul>
+  	 				<li><a href="#">watch</a></li>
+  	 				<li><a href="#">bag</a></li>
+  	 				<li><a href="#">shoes</a></li>
+  	 				<li><a href="#">dress</a></li>
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+  	 			<h4>follow us</h4>
+  	 			<div class="social-links">
+  	 				<a href="#"><i class="fab fa-facebook-f"></i></a>
+  	 				<a href="#"><i class="fab fa-twitter"></i></a>
+  	 				<a href="#"><i class="fab fa-instagram"></i></a>
+  	 				<a href="#"><i class="fab fa-linkedin-in"></i></a>
+  	 			</div>
+  	 		</div>
+  	 	</div>
+  	 </div>
+  </footer>
+  </body>
+</html>
+<script type="text/javascript">
+    function updateTimer() {
+    future = Date.parse("april 12, 2022 01:30:00");
+ now = new Date();
+ diff = future - now;
+
+ days = Math.floor(diff / (1000 * 60 * 60 * 24));
+ hours = Math.floor(diff / (1000 * 60 * 60));
+ mins = Math.floor(diff / (1000 * 60));
+ secs = Math.floor(diff / 1000);
+
+ d = days;
+ h = hours - days * 24;
+ m = mins - hours * 60;
+ s = secs - mins * 60;
+
+ document.getElementById("timer")
+  .innerHTML =
+  '<div>' + d + '<span>Days</span></div>' +
+  '<div>' + h + '<span>Hours</span></div>' +
+  '<div>' + m + '<span>Minutes</span></div>' +
+  '<div>' + s + '<span>Seconds</span></div>';
+}
+setInterval('updateTimer()', 1000);
+
+</script>
+<script>
+$(document).ready(function(){
+    filter_data();
+    function filter_data()
+    {
+        $('.filter_data').html('<div id="loading" style="" ></div>');
+        var action = 'fetch_data';
+        var minimum_price = $('#hidden_minimum_price').val();
+        var maximum_price = $('#hidden_maximum_price').val();
+        $.ajax({
+            url:"/fetchrecords",
+            method:"POST",
+            data:{action:action, minimum_price:minimum_price, maximum_price:maximum_price},
+            success:function(data){
+                $('.filter_data').html(data);
+                $(".filter_data").append(data.htmlresponse);
+            }
+        });
+    }
+    $('#price_range').slider({
+        range:true,
+        min:10,
+        max:1000,
+        values:[10, 1000],
+        step:10,
+        stop:function(event, ui)
+        {
+            $('#price_show').html(ui.values[0] + ' - ' + ui.values[1]);
+            $('#hidden_minimum_price').val(ui.values[0]);
+            $('#hidden_maximum_price').val(ui.values[1]);
+            filter_data();
+        }
+    });
+});
+</script>
