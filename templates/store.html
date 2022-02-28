@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Place image inside Silhouette</title>
+    <link href="{{url_for('static', filename='style.css' )}}" rel="stylesheet">
+	  <!-- Images icons footer -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+  </head>
+  <style>
+    .stores{
+     padding: 50px;
+     column-width: 400px;
+    }
+    continent{
+    color: crimson;
+    font-size: 38px;
+    font-weight: 600;
+    }
+    h3 {
+      color: crimson;
+      font-size: 28px;
+      font-weight: 500;
+    }
+     span{
+     display: block;
+     font-size: 25px;
+     width: 100%;
+    }
+    #contact span{
+      font-size: 20px;
+    }
+     #contact span{
+     column-count: 2;
+    }
+  </style>
+  <script>
+
+  </script>
+  <body>
+  <!--Responsive menu-->
+  <header>
+    <div class="logo">
+      <a href="#">
+        <img src="{{ url_for('static',filename='images/logo.png') }}" alt="Logo Image">
+      </a>
+    </div>
+
+    <div class="navigation">
+
+      <input type="checkbox" class="toggle-menu">
+     <div class="hamburger"></div>
+
+      <ul class="menu">
+        <li><a href="home">Home</a></li>
+        <li><a href="product">Product</a></li>
+        <li><a href="store">Store</a></li>
+        <li><a href="login">Login</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="stores">
+<continent >Africa</continent><br>
+	   <span>Congo</span>
+       <span>Uganda</span>
+       <span>Chad</span>
+       <span>Mali</span>
+       <span>Mozambique</span>
+       <span>Cape Verde</span>
+
+<continent>Europe</continent><br>
+	   <span>Hungary</span>
+       <span>Scotland</span>
+       <span>Italy</span>
+       <span>Portugal</span>
+       <span>Spain</span>
+       <span>Romania</span>
+       <span>UK</span>
+<continent>Asia</continent><br>
+	   <span>Japan</span>
+       <span>Singapore</span>
+       <span>Macau</span>
+       <span>South Korea</span>
+       <span>Thailand</span>
+<continent>Latin America</continent><br>
+	   <span>Brazil</span>
+       <span>Colombia</span>
+       <span>Argentina</span>
+       <span>Uruguai</span>
+       <span>Paraguai</span>
+<continent>Asia</continent><br>
+	   <span>Japan</span>
+       <span>Scotland</span>
+       <span>Italy</span>
+       <span>Portugal</span>
+       <span>Spain</span>
+       <span>Romania</span>
+       <span>UK</span>
+<continent>Oceania</continent><br>
+	   <span>Fiji</span>
+       <span>Samoa</span>
+       <span>Tonga</span>
+       <span>Nauru</span>
+       <span>Palau</span>
+       <span>Micronesia</span>
+       <span>Papua New Guinea</span>
+       <span>Vanuatu</span>
+  </div>
+
+  <div class="stores" id="contact">
+	  <h2>Contact Us</h2>
+	  <h3 >Europe</h3><br>
+	   <span>europe.franchise@miniso.com</span>
+       <span>+86 020 31028820 ext 298</span>
+       <span>Ms. Luise Cen</span>
+
+	  <h3 >Africa</h3><br>
+	   <span>africa.franchise@miniso.com</span>
+       <span>+86 020 31028820 ext 298</span>
+       <span>Ms. Luise Cen</span>
+
+	  <h3 >Latin America</h3><br>
+	   <span>latinamerica.franchise@miniso.com</span>
+       <span>+86 020 31028820 ext 298</span>
+       <span>Ms. Luise Cen</span>
+
+	  <h3 >Latin America</h3><br>
+	   <span>asia.franchise@miniso.com</span>
+       <span>+86 020 31028820 ext 297</span>
+       <span>+86 17137624118</span>
+       <span>Ms. Luise Cen</span>
+
+	  <h3>Manager of International Franchise Office</h3><br>
+	   <span>luise.cen@miniso.com</span>
+       <span>Ms. Luise Cen</span>
+  </div>
+
+  </body>
+<!--Footer-->
+  <footer class="footer">
+  	 <div class="container">
+  	 	<div class="row">
+  	 		<div class="footer-col">
+  	 			<h4>company</h4>
+  	 			<ul>
+  	 				<li><a href="#">about us</a></li>
+  	 				<li><a href="#">our services</a></li>
+  	 				<li><a href="#">privacy policy</a></li>
+  	 				<li><a href="#">affiliate program</a></li>
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+  	 			<h4>get help</h4>
+  	 			<ul>
+  	 				<li><a href="#">FAQ</a></li>
+  	 				<li><a href="#">shipping</a></li>
+  	 				<li><a href="#">returns</a></li>
+  	 				<li><a href="#">order status</a></li>
+  	 				<li><a href="#">payment options</a></li>
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+  	 			<h4>online shop</h4>
+  	 			<ul>
+  	 				<li><a href="#">watch</a></li>
+  	 				<li><a href="#">bag</a></li>
+  	 				<li><a href="#">shoes</a></li>
+  	 				<li><a href="#">dress</a></li>
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+  	 			<h4>follow us</h4>
+  	 			<div class="social-links">
+  	 				<a href="#"><i class="fab fa-facebook-f"></i></a>
+  	 				<a href="#"><i class="fab fa-twitter"></i></a>
+  	 				<a href="#"><i class="fab fa-instagram"></i></a>
+  	 				<a href="#"><i class="fab fa-linkedin-in"></i></a>
+  	 			</div>
+  	 		</div>
+  	 	</div>
+  	 </div>
+  </footer>
+</html>

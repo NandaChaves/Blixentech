@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>BlixenTech</title>
+    <link href="{{url_for('static', filename='style.css' )}}" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<script src="{{url_for('static', filename='js/dropdownLayer.js')}}" type="text/javascript"></script>
+    <!-- Images icons footer -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  </head>
+  <style>
+    a{
+     text-align:center;
+     text-decoration:none;
+    }
+  </style>
+  <body>
+  <!--Responsive menu-->
+  <header>
+    <div class="logo">
+      <a href="#">
+        <img src="{{ url_for('static',filename='images/logo.png') }}" alt="Logo Image">
+      </a>
+    </div>
+
+    <div class="navigation">
+      <input type="checkbox" class="toggle-menu">
+      <div class="hamburger"></div>
+      <ul class="menu">
+        <li><a href="home">Home</a></li>
+        <li><a href="product">Product</a></li>
+        <li><a href="store">Store</a></li>
+        <li><a href="login">Login</a></li>
+      </ul>
+    </div>
+  </header>
+
+ <br><br><br>
+   <h1 style="text-align:center;">Username or Data not Match, try again or subscribe <br><a href="login">Login Page</a></h1>
+
+      <br>
+      <br>
+      <br>
+      <br><br><br><br>
+  </body>
+    <!--Footer-->
+  <footer class="footer">
+  	 <div class="container">
+  	 	<div class="row">
+  	 		<div class="footer-col">
+  	 			<h4>company</h4>
+  	 			<ul>
+  	 				<li><a href="#">about us</a></li>
+  	 				<li><a href="#">our services</a></li>
+  	 				<li><a href="#">privacy policy</a></li>
+  	 				<li><a href="#">affiliate program</a></li>
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+  	 			<h4>get help</h4>
+  	 			<ul>
+  	 				<li><a href="#">FAQ</a></li>
+  	 				<li><a href="#">shipping</a></li>
+  	 				<li><a href="#">returns</a></li>
+  	 				<li><a href="#">order status</a></li>
+  	 				<li><a href="#">payment options</a></li>
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+  	 			<h4>online shop</h4>
+  	 			<ul>
+  	 				<li><a href="#">watch</a></li>
+  	 				<li><a href="#">IPhone</a></li>
+  	 				<li><a href="#">headphone</a></li>
+  	 				<li><a href="#">game</a></li>
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+  	 			<h4>follow us</h4>
+  	 			<div class="social-links">
+  	 				<a href="#"><i class="fab fa-facebook-f"></i></a>
+  	 				<a href="#"><i class="fab fa-twitter"></i></a>
+  	 				<a href="#"><i class="fab fa-instagram"></i></a>
+  	 				<a href="#"><i class="fab fa-linkedin-in"></i></a>
+  	 			</div>
+  	 		</div>
+  	 	</div>
+  	 </div>
+  </footer>
+</html>
