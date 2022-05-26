@@ -1,5 +1,5 @@
 # Blixentech 
-O site, batizado de BlixenTech, foi desenvolvido a partir do uso do micro-framework Flask, HTML, CSS e Javascript e uso de Boostrap para agilizar o projeto. Em certas páginas também inseriu-se uma conexão com o Sistema gerenciador de banco de da-dos MYSQL, para criar, armazenar, alterar e deletar os dados dos usuários(clientes), produtos e funcionários. 
+O site, batizado de BlixenTech, foi desenvolvido a partir do uso do micro-framework Flask, HTML, CSS e Javascript e uso de Boostrap para agilizar o projeto. Em certas páginas também inseriu-se um CRUD MYSQL,para manipular os dados dos usuários(clientes), produtos e funcionários. 
 O site é constituído de 9 páginas:
 1.	Index: página principal 
 2.	Product: Lista de produtos 
